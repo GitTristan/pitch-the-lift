@@ -1,0 +1,35 @@
+<div class="form-horizontal">
+  <%= form_for @angel do |f| %>
+
+  <div class="form-group">
+    <%= f.label :name, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :name, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :email, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :email, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+    <%= f.label :phone, class: "col-md-2 control-label" %>
+    <div class="col-md-5">
+      <%= f.text_field :phone, class: "form-control" %>
+    </div>
+  </div>
+  <div class="form-group">
+      <div class="col-md-offset-2 col-sm-6">
+        <%= f.check_box :accredited %>
+        <%= f.label :accredited %>
+      </div>
+    </div>
+  <div class="form-group">
+    <div class="col-md-offset-2 col-sm-6">
+      <%= f.submit class: "btn btn-primary"%>
+      <%= link_to "Cancel", angels_path, class: "btn btn-default" %>
+    </div>
+  </div>
+<% end %>
+</div>
