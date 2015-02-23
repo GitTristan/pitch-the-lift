@@ -1,4 +1,4 @@
-class AngelController < ApplicationController
+class AngelsController < ApplicationController
 
   def index
     @angels = Angel.all
