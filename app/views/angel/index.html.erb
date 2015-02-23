@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="page-header">
+    <div class="pull-right">
+      <%= link_to "New Project", new_angel_path, class: "btn btn-info" %>
+    </div>
+    <h1>Angels</h1>
+  </div>
+
+  <table class='table'>
+    <thead>
+      <tr>
+        <th><strong>Name</strong></th>
+        <th><strong>Email</strong></th>
+        <th><strong>Phone</strong></th>
+      </tr>
+    </thead>
+    <% @angels.each do |a| %>
+    <tr>
+      <td><%= link_to a.name, angel_path(a) %></td>
+      <td><%= a.email %></td>
+      <td><%= a.phone %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
