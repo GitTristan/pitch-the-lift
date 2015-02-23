@@ -27,11 +27,24 @@ class AngelsController < ApplicationController
   end
 
   def update
+    @angel = Angel.find(params[:id])
 
+    if @angel.update(angel_params)
+      flash[:notice] = "Angel was successfully updated"
+      redirect_to angels_path
+    else
+      render :edit
+    end
   end
 
   def destroy
-
+    angel = Angel.find(params[:id])
+    if angel.destroy
+      flash[:notice] = "An Angel fell from heaven"
+      redirect_to angels_path
+    else
+      render :edit
+    end
   end
 
 
