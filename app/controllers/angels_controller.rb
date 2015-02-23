@@ -9,15 +9,21 @@ class AngelsController < ApplicationController
   end
 
   def create
-
+    @angel = Angel.new(angel_params)
+      if @angel.save
+        flash[:notice] = "Angel was successfully created"
+        redirect_to angel_path(@angel)
+      else
+        render :new
+      end
   end
 
   def show
-
+    @angel = Angel.find(params[:id])
   end
 
   def edit
-
+    @angel = Angel.find(params[:id])
   end
 
   def update
@@ -33,6 +39,6 @@ class AngelsController < ApplicationController
 
 
   def angel_params
-
+    params.require(:angel).permit(:name, :email, :phone)
   end
 end

@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="page-header">
+    <div class="pull-right">
+    <%= link_to "Edit", edit_angel_path(@angel), class: "btn btn-info" %>
+    <%= link_to "Delete", angel_path(@angel), method: :delete, class: "btn btn-danger" %>
+  </div>
+    <h1><%= @angel.name %></h1><br />
+    <p> <%= @angel.email %></p>
+    <p> <%= @angel.phone %>
+  </div>
+</div>
